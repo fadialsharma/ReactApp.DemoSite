@@ -17,7 +17,7 @@ The project was created using npm v9.1.2 and node v18.12.1.
 To clone this project, please use the clone button on this page or run the following command in your terminal:
 
 ```bash
-    git clone https://github.com/reactapp-demosite
+    git clone https://github.com/fadialsharma/ReactApp.DemoSite
 ```
 
 ##Install Dependencies
