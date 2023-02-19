@@ -1,24 +1,40 @@
 .CustomRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  border: 1px solid #242424;
 }
 .CustomCol {
-  width: 20%;
+  position: relative;
   height: auto;
-  margin: 20px;
 }
 .CustomCard {
   position: relative;
-  border: 2px solid #242424;
+  border: 1px solid #242424;
+  border-radius: 5px;
 }
 .ProductImage {
   max-width: -webkit-fill-available;
 }
 .CustomCardTextContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #242424;
   color: #ffffff;
   padding: 0px 12px;
@@ -38,18 +54,37 @@
 .ItemPrice {}
 .CustomItemOnSaleContainer {
   position: absolute;
+  margin: 0px;
+  top: 0;
 }
 .ItemOnSale {
-  background: red;
+  background: #FF0000;
   color: #ffffff;
+  margin: 0px;
+  padding: 8px;
+  border-radius: 5px 0px 0px 0px;
 }
-@media(min-width: 768px){
+@media(min-width: 768px) {
+  .CustomCol {
+    width: 20%;
+    margin: 2%;
+  }
   .CustomRow {
-    
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 @media(max-width: 767px){
+  .CustomCol {
+    width: 45%;
+    margin: 2%;
+  }
   .CustomRow {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
