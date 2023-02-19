@@ -1,0 +1,90 @@
+.CustomRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  border: 1px solid #242424;
+}
+.CustomCol {
+  position: relative;
+  height: auto;
+}
+.CustomCard {
+  position: relative;
+  border: 1px solid #242424;
+  border-radius: 5px;
+}
+.ProductImage {
+  max-width: -webkit-fill-available;
+}
+.CustomCardTextContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #242424;
+  color: #ffffff;
+  padding: 0px 12px;
+  height: 60px;
+  margin: 0;
+}
+.CustomCardBody{}
+.CustomCardTextContainer {}
+
+.CustomProductName {
+  width: 70%;
+}
+.CustomProductPrice {
+  width: 30%;
+}
+
+.ItemPrice {}
+.CustomItemOnSaleContainer {
+  position: absolute;
+  margin: 0px;
+  top: 0;
+}
+.ItemOnSale {
+  background: #FF0000;
+  color: #ffffff;
+  margin: 0px;
+  padding: 8px;
+  border-radius: 5px 0px 0px 0px;
+}
+@media(min-width: 768px) {
+  .CustomCol {
+    width: 20%;
+    margin: 2%;
+  }
+  .CustomRow {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media(max-width: 767px){
+  .CustomCol {
+    width: 45%;
+    margin: 2%;
+  }
+  .CustomRow {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
