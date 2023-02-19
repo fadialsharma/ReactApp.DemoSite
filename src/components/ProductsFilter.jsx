@@ -1,32 +1,45 @@
 import { useState } from "react";
 import { Form, Dropdown } from "react-bootstrap";
-import classes from "./ProductsFilter.css";
+import classes from "./ProductsFilter.module.css";
 
-function ProductsFilter() {
-  const [filterType, setFilterType] = useState("");
+function ProductsFilter({ products, setProducts }) {
+  const [filterType, setFilterType] = useState("All");
 
   const handleFilterChange = (event) => {
     setFilterType(event.target.value);
-    // console.log(setFilterType);
+    if (event.target.value === "All") {
+      setProducts(products);
+    } else {
+      setProducts(
+        products.filter((product) => product.type === event.target.value)
+      );
+    }
   };
   const handleBlur = () => {
-    setFilterType("");
-    console.log(setFilterType);
+    setFilterType("All");
+    setProducts(products);
   };
   const handleSelect = (eventKey) => {
     setFilterType(eventKey);
-    console.log(eventKey);
+    if (eventKey === "All") {
+      setProducts(products);
+    } else {
+      setProducts(products.filter((product) => product.type === eventKey));
+    }
   };
 
   return (
-    <Form.Group controlId="formTypeFilter">
-      <Form.Label>Filter by Type:</Form.Label>
+    <Form.Group
+      controlId="formTypeFilter"
+      className={classes.ProductFilterContainer}
+    >
+      <Form.Label>Filter by </Form.Label>
       <Dropdown onBlur={handleBlur} onSelect={handleSelect}>
         <Dropdown.Toggle variant="primary" id="dropdown-basic">
-          {filterType ? filterType : "Select Product Type"}
+          {filterType}
         </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item onClick={handleFilterChange} value="">
+        <Dropdown.Menu className={classes.DropdownMenu}>
+          <Dropdown.Item onClick={handleFilterChange} value="All">
             All
           </Dropdown.Item>
           <Dropdown.Item onClick={handleFilterChange} value="Beer">
