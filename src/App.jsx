@@ -1,11 +1,17 @@
-import { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import products from "./products.json";
+import ProductsFilter from "./components/ProductsFilter";
 
 function App() {
   return (
     <Container>
-      <h1> Fadi's react app</h1>
+      <Row>
+        <Col>
+          <Form>
+            <ProductsFilter />
+          </Form>
+        </Col>
+      </Row>
     </Container>
   );
 }
