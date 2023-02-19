@@ -1,0 +1,55 @@
+.CustomRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.CustomCol {
+  width: 20%;
+  height: auto;
+  margin: 20px;
+}
+.CustomCard {
+  position: relative;
+  border: 2px solid #242424;
+}
+.ProductImage {
+  max-width: -webkit-fill-available;
+}
+.CustomCardTextContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #242424;
+  color: #ffffff;
+  padding: 0px 12px;
+  height: 60px;
+  margin: 0;
+}
+.CustomCardBody{}
+.CustomCardTextContainer {}
+
+.CustomProductName {
+  width: 70%;
+}
+.CustomProductPrice {
+  width: 30%;
+}
+
+.ItemPrice {}
+.CustomItemOnSaleContainer {
+  position: absolute;
+}
+.ItemOnSale {
+  background: red;
+  color: #ffffff;
+}
+@media(min-width: 768px){
+  .CustomRow {
+    
+  }
+}
+@media(max-width: 767px){
+  .CustomRow {
+    flex-wrap: wrap;
+  }
+}

@@ -1,7 +1,7 @@
 import { Container, Row, Col, Form } from "react-bootstrap";
-import products from "./products.json";
 import ProductsFilter from "./components/ProductsFilter";
 import ProductsSearch from "./components/ProductsSearch";
+import ProductsList from "./components/ProductsList";
 
 function App() {
   return (
@@ -13,10 +13,10 @@ function App() {
             <ProductsSearch />
           </Form>
         </Col>
-        <Col>
-        
-        </Col>
       </Row>
+      <>
+        <ProductsList />
+      </>
     </Container>
   );
 }
