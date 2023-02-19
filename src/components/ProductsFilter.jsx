@@ -1,19 +1,29 @@
 import { useState } from "react";
 import { Form, Dropdown } from "react-bootstrap";
+import classes from "./ProductsFilter.css";
 
 function ProductsFilter() {
   const [filterType, setFilterType] = useState("");
+
   const handleFilterChange = (event) => {
     setFilterType(event.target.value);
     // console.log(setFilterType);
-  }
+  };
+  const handleBlur = () => {
+    setFilterType("");
+    console.log(setFilterType);
+  };
+  const handleSelect = (eventKey) => {
+    setFilterType(eventKey);
+    console.log(eventKey);
+  };
 
   return (
     <Form.Group controlId="formTypeFilter">
       <Form.Label>Filter by Type:</Form.Label>
-      <Dropdown>
+      <Dropdown onBlur={handleBlur} onSelect={handleSelect}>
         <Dropdown.Toggle variant="primary" id="dropdown-basic">
-          {filterType ? filterType : "Select Type"}
+          {filterType ? filterType : "Select Product Type"}
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item onClick={handleFilterChange} value="">
@@ -34,7 +44,7 @@ function ProductsFilter() {
         </Dropdown.Menu>
       </Dropdown>
     </Form.Group>
-  )
+  );
 }
 
 export default ProductsFilter;
