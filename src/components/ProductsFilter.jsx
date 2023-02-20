@@ -22,23 +22,13 @@ function ProductsFilter({ products, setProducts }) {
     setProducts(products);
   };
 
-  const handleSelect = (eventKey) => {
-    // setFilterType(eventKey);
-    // console.log(eventKey);
-    // if (eventKey === "All") {
-    //   // setProducts(products);
-    // } else {
-    //   // setProducts(products.filter((product) => product.type === eventKey));
-    // }
-  };
-
   return (
     <Form.Group
       controlId="formTypeFilter"
       className={classes.ProductFilterContainer}
     >
       <Form.Label>Filter by </Form.Label>
-      <Dropdown onBlur={handleBlur} onSelect={handleSelect}>
+      <Dropdown onBlur={handleBlur} >
         <Dropdown.Toggle variant="primary" id="dropdown-basic">
           {filterType}
         </Dropdown.Toggle>

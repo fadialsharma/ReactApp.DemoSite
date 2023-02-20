@@ -1,8 +1,6 @@
 import { Row, Col, Card } from "react-bootstrap";
 import classes from "./ProductsList.module.css";
 
-// console.log(products);
-
 function ProductsList({returnedProducts}) {  
 
   return (
@@ -26,9 +24,9 @@ function ProductsList({returnedProducts}) {
             />
             <Card.Body className={classes.CustomCardBody}>
               <Card.Text className={classes.CustomCardTextContainer}>
-                <p className={classes.CustomProductName}>
+                <a href="#" className={classes.CustomProductName}>
                   {product.productName}
-                </p>
+                </a>
                 <p className={classes.CustomProductPrice}>{product.price}</p>
               </Card.Text>
             </Card.Body>

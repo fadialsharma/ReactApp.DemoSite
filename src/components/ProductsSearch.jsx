@@ -9,17 +9,15 @@ function ProductsSearch({ products, setProducts }) {
     const filteredProducts = products.filter((product) => {
       const name = product?.productName.toLowerCase()
       if (searchTerm && name.startsWith(searchTerm)){
-        console.log(name);
         return true
       }
       return false
     })
-    console.log(filteredProducts);
     if (filteredProducts.length > 0){
       setProducts(filteredProducts)
     }
     if (!searchTerm || searchTerm === ''){
-      console.log(searchTerm);
+      
       setProducts(products)
     }
   }
