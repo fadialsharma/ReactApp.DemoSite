@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import classes from './ProductsSearch.module.css'
 
@@ -6,21 +6,27 @@ function ProductsSearch({ products, setProducts }) {
   const [searchTerm, setSearchTerm] = useState('');
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-    const filteredProducts = products.filter((product) => {
-      const name = product?.productName.toLowerCase()
-      if (searchTerm && name.startsWith(searchTerm)){
-        return true
+  }
+  
+  useEffect(() => {
+    if(searchTerm) {
+      const filteredProducts = products.filter((product) => {
+        const name = product?.productName.toLowerCase()
+        if (searchTerm && name.startsWith(searchTerm)) {
+          return true
+        }
+        return false
+      })
+      if (filteredProducts.length > 0) {
+        setProducts(filteredProducts)
+      }else{
+        setProducts([])
       }
-      return false
-    })
-    if (filteredProducts.length > 0){
-      setProducts(filteredProducts)
-    }
-    if (!searchTerm || searchTerm === ''){
-      
+    }else{
       setProducts(products)
     }
-  }
+  }, [searchTerm])
+  
   return (
     <Form.Group controlId="formSearch" className={classes.ProductSearchContainer}>
       <Form.Label>Search:</Form.Label>
