@@ -14,7 +14,6 @@ function ProductsFilter({ products, setProducts }) {
   };
 
   useEffect(() => {
-    console.log(filterType);
     if (filterType === "All") {
       setProducts(products);
     } else {
