@@ -26,7 +26,7 @@ function ProductsSearch({ products, setProducts }) {
       <Form.Label>Search:</Form.Label>
       <Form.Control
         type="text"
-        placeholder="Search"
+        placeholder="Type the product name:"
         value={searchTerm}
         onFocus={handleSearchChange}
         onBlur={handleSearchChange}

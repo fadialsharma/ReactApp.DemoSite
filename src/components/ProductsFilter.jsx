@@ -29,7 +29,7 @@ function ProductsFilter({ products, setProducts }) {
     >
       <Form.Label>Filter by </Form.Label>
       <Dropdown onBlur={handleBlur} >
-        <Dropdown.Toggle variant="primary" id="dropdown-basic">
+        <Dropdown.Toggle variant="primary" id="dropdown-basic" className={classes.Button}>
           {filterType}
         </Dropdown.Toggle>
         <Dropdown.Menu className={classes.DropdownMenu}>
