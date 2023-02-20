@@ -2,14 +2,27 @@ import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import classes from './ProductsSearch.module.css'
 
-function ProductsSearch() {
+function ProductsSearch({ products, setProducts }) {
   const [searchTerm, setSearchTerm] = useState('');
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+    const filteredProducts = products.filter((product) => {
+      const name = product?.productName.toLowerCase()
+      if (searchTerm && name.startsWith(searchTerm)){
+        console.log(name);
+        return true
+      }
+      return false
+    })
+    console.log(filteredProducts);
+    if (filteredProducts.length > 0){
+      setProducts(filteredProducts)
+    }
+    if (!searchTerm || searchTerm === ''){
+      console.log(searchTerm);
+      setProducts(products)
+    }
   }
-  // const filteredProducts = productsData.filter(product =>
-  //   product.productName.toLowerCase().includes(searchTerm.toLowerCase())
-  // );
   return (
     <Form.Group controlId="formSearch" className={classes.ProductSearchContainer}>
       <Form.Label>Search:</Form.Label>
@@ -17,6 +30,8 @@ function ProductsSearch() {
         type="text"
         placeholder="Search"
         value={searchTerm}
+        onFocus={handleSearchChange}
+        onBlur={handleSearchChange}
         onChange={handleSearchChange}
       />
     </Form.Group>

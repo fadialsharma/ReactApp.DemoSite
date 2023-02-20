@@ -46,10 +46,11 @@
 .CustomCardTextContainer {}
 
 .CustomProductName {
-  width: 70%;
+  width: 75%;
+  color: #ffffff;
 }
 .CustomProductPrice {
-  width: 30%;
+  width: 25%;
 }
 
 .ItemPrice {}

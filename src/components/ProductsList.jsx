@@ -1,13 +1,9 @@
 import { Row, Col, Card } from "react-bootstrap";
-import products from "../products.json";
 import classes from "./ProductsList.module.css";
 
 // console.log(products);
 
-function ProductsList() {
-  const returnedProducts = products.filter((product) => {
-    return product;
-  });
+function ProductsList({returnedProducts}) {  
 
   return (
     <Row className={classes.CustomRow}>
@@ -25,7 +21,8 @@ function ProductsList() {
             <Card.Img
               variant="top"
               className={classes.ProductImage}
-              src={product.productImage}
+              src={product.productImage} 
+              alt={product.CustomProductName}
             />
             <Card.Body className={classes.CustomCardBody}>
               <Card.Text className={classes.CustomCardTextContainer}>

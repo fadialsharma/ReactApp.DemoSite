@@ -4,28 +4,32 @@ import classes from "./ProductsFilter.module.css";
 
 function ProductsFilter({ products, setProducts }) {
   const [filterType, setFilterType] = useState("All");
-
+  
   const handleFilterChange = (event) => {
-    setFilterType(event.target.value);
-    if (event.target.value === "All") {
+    setFilterType(event);
+    if (event === "All") {
       setProducts(products);
     } else {
-      setProducts(
-        products.filter((product) => product.type === event.target.value)
-      );
+      const filteredProducts = products.filter((product) => product.type === event)
+      if (filteredProducts.length > 0) {
+        setProducts(filteredProducts);
+      }
     }
   };
+
   const handleBlur = () => {
     setFilterType("All");
     setProducts(products);
   };
+
   const handleSelect = (eventKey) => {
-    setFilterType(eventKey);
-    if (eventKey === "All") {
-      setProducts(products);
-    } else {
-      setProducts(products.filter((product) => product.type === eventKey));
-    }
+    // setFilterType(eventKey);
+    // console.log(eventKey);
+    // if (eventKey === "All") {
+    //   // setProducts(products);
+    // } else {
+    //   // setProducts(products.filter((product) => product.type === eventKey));
+    // }
   };
 
   return (
@@ -39,19 +43,19 @@ function ProductsFilter({ products, setProducts }) {
           {filterType}
         </Dropdown.Toggle>
         <Dropdown.Menu className={classes.DropdownMenu}>
-          <Dropdown.Item onClick={handleFilterChange} value="All">
+          <Dropdown.Item onClick={() => { handleFilterChange("All") }}>
             All
           </Dropdown.Item>
-          <Dropdown.Item onClick={handleFilterChange} value="Beer">
+          <Dropdown.Item onClick={() => { handleFilterChange("Beer") }}>
             Beer
           </Dropdown.Item>
-          <Dropdown.Item onClick={handleFilterChange} value="Wine">
+          <Dropdown.Item onClick={() => { handleFilterChange("Wine") }}>
             Wine
           </Dropdown.Item>
-          <Dropdown.Item onClick={handleFilterChange} value="Spirits">
+          <Dropdown.Item onClick={() => { handleFilterChange("Spirits") }}>
             Spirits
           </Dropdown.Item>
-          <Dropdown.Item onClick={handleFilterChange} value="Cider">
+          <Dropdown.Item onClick={() => { handleFilterChange("Cider") }}>
             Cider
           </Dropdown.Item>
         </Dropdown.Menu>
