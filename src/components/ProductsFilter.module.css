@@ -1,17 +1,38 @@
 .ProductFilterContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  height: 60px;
+  height: 80px;
+  width: 80%;
+  margin: 0 auto;
 }
-.ProductFilterContainer button {
-  margin-left: 24px;
-  width: 60px;
-  height: 22px;
-}
+
 .DropdownMenu {
-  display: grid;
-  row-gap: 10px;
   margin-top: 10px;
+  padding: 8px 0;
+  min-width: 120px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.Button {
+  width: 60px;
+  height: 25px;
+}
+.DropdownMenu a {
+  padding: 12px;
+}
+
+.DropdownMenu .dropdown-item {
+  font-size: 14px;
+  color: #333;
+  padding: 8px 16px;
+}
+
+.DropdownMenu .dropdown-item:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.DropdownMenu .dropdown-item.active,
+.DropdownMenu .dropdown-item:active {
+  background-color: #007bff;
+  color: #fff;
 }

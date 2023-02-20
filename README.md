@@ -10,7 +10,10 @@ This React app is intended to demonstrate my proficiency in the React JavaScript
 
 ## Setup
 
-The project was created using npm v9.1.2 and node v18.12.1.
+The project was created using 
+- npm v9.1.2 
+- node v18.12.1
+- Bootstrap 5.2.3
 
 ## Clone the Repository
 
@@ -34,4 +37,4 @@ After cloning the repository to your local machine, navigate to the root folder 
     npm run dev
 ```
 
-That's it! The project should now be running on your local machine. If you encounter any issues or have any questions, please refer to the project's documentation or contact the project's maintainers.
+That's it! The project should now be running on your local machine. If you encounter any issues or have any questions, please send me an email at fadialsharma@gmail.com.
