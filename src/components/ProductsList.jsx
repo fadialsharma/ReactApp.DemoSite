@@ -24,7 +24,7 @@ function ProductsList({returnedProducts}) {
             />
             <Card.Body className={classes.CustomCardBody}>
               <Card.Text className={classes.CustomCardTextContainer}>
-                <a href="javascript:void(0)" className={classes.CustomProductName}>
+                <a href="#" className={classes.CustomProductName}>
                   {product.productName}
                 </a>
                 <p className={classes.CustomProductPrice}>{product.price}</p>

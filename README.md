@@ -23,13 +23,14 @@ To clone this project, please use the clone button on this page or run the follo
     git clone https://github.com/fadialsharma/ReactApp.DemoSite
 ```
 
-##Install Dependencies
+## Install Dependencies
 
 After cloning the repository to your local machine, navigate to the root folder of the project and install all the required dependencies by running the following command in your terminal:
 
 ```bash
     npm install
 ```
+NOTE: Ensure you have npm installed
 
 ## Run the Project Locally
 
